@@ -4,8 +4,9 @@
   "author": "Christian Kaisermann",
   "license": "MIT",
   "scripts": {
-    "start": "npm run dev",
+    "start": "sudo npm install --global cross-env && npm run dev",
     "dev": "cross-env ELEVENTY_ENV=development eleventy --serve",
+    "build": "cross-env ELEVENTY_ENV=production eleventy",
     "build:dev": "eleventy",
     "build:prod": "run-s build purge-css critical-css minify-html",
     "lint": "eslint --ignore-pattern=\"node_modules\" .",
@@ -16,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kaisermann/kaisermann.me"
+    "url": "https://github.com/sudoxyz/personal-web"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.11.0",
@@ -53,6 +54,7 @@
     "typescript": "^4.0.2"
   },
   "dependencies": {
+    "eleventy": "^1.0.6",
     "js-levenshtein": "^1.1.6"
   }
 }

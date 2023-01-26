@@ -2,9 +2,6 @@
   <div class="header__container">
     <nav class="nav" js-slot="nav">
       {% if page.url == "/"%}
-      <ul class="nav__breadcrumb">
-        <li>EM</li>
-      </ul>
       {% set navPages = collections.headerNav | eleventyNavigation("bio") %}
       <ul class="nav__menu">
         {%- for entry in navPages %}
