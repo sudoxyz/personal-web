@@ -196,7 +196,7 @@
     grid-area: 2/3;
   }
   .showhide {
-    grid-area: 4/2/4/4;
+    grid-area: 2/3;
 
     & button {
       font-size: 1em;
@@ -256,7 +256,7 @@
           </div>
 
           <div class="numbers">
-            {#each { length: 9 } as _, i}
+            {#each { length: 10 } as _, i}
               <div class="control number">
                 <button on:click={() => gotoChannel(i + 1)}>{i + 1}</button>
               </div>
@@ -264,23 +264,14 @@
             <div class="control number">
               <button on:click={() => gotoChannel(0)}>0</button>
             </div>
-            <div class="control showhide">
-              <button class="showhide" on:click={toggleContent}>
-                SHOW/HIDE
-              </button>
-            </div>
           </div>
         </div>
-
+        <div class="control showhide">
+          <button class="showhide" on:click={toggleContent}>SHOW / HIDE</button>
+        </div>
         <div class="brand">
-          <img
-            loading="lazy"
-            src="/assets/images/kiwivision.svg"
-            alt="kiwivision"
-            width="103"
-            height="10" />
           <br />
-          <span>COMPUTER SPACE COMMAND</span>
+          <span>SUDO SPACE COMMAND</span>
         </div>
       </div>
     </div>

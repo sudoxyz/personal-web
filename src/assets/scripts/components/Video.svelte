@@ -86,4 +86,7 @@
   <source
     src="/assets/videos/channel-{$currentChannelInfo.displayName}.mp4"
     type="video/mp4" />
+  <source
+    src="/assets/videos/travel.mp4"
+    type="video/mp4" />
 </video>

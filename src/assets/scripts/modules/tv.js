@@ -1,6 +1,5 @@
 import { writable, derived, get } from 'svelte/store';
 
-import { sendEvent } from './analytics.js';
 import { raf, body } from './utils.js';
 
 export const LOADING_STATE = {
@@ -8,7 +7,6 @@ export const LOADING_STATE = {
   Loading: 1,
   Done: 2,
 };
-
 // used for toggling
 let prevVolume = null;
 
@@ -33,6 +31,7 @@ export const channelMap = {
   7: { type: 'video', duration: null, startTimestamp: null },
   8: { type: 'video', duration: null, startTimestamp: null },
   9: { type: 'webcam', displayName: 'AV1' },
+  10: {type: 'video',displayName: 'Travel',duration: null,startTimestamp: null,},
 };
 
 const channelIds = Object.keys(channelMap);
