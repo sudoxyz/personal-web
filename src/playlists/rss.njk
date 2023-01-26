@@ -1,0 +1,22 @@
+---
+permalink: playlists.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Ethan's playlists</title>
+  <link href="https://sudo404.xyz/playlists.xml" rel="self"/>
+  <link href="https://sudo404.xyz"/>
+  <id>https://sudo404.xyz</id>
+  <author>
+    <name>Ethan Miller</name>
+    <email>ethan@sudo404.xyz</email>
+  </author>
+  {%- for playlist in playlists %}
+  <entry>
+    <title>{{ playlist.name }}</title>
+    <link href="{{ playlist.url }}"/>
+    <id>{{ playlist.url }}</id>
+  </entry>
+  {%- endfor %}
+</feed>

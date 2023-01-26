@@ -83,6 +83,10 @@ body,
   height: 100%;
 }
 
+.playlists-br {
+  line-height: 10px;
+}
+
 .page-container {
   display: grid;
   grid-template-rows: auto 1fr auto;
