@@ -4,7 +4,7 @@
   "author": "Christian Kaisermann",
   "license": "MIT",
   "scripts": {
-    "start": "sudo npm install --global cross-env && npm run dev",
+    "start": "npm run dev",
     "dev": "cross-env ELEVENTY_ENV=development eleventy --serve",
     "build": "cross-env ELEVENTY_ENV=production eleventy",
     "build:dev": "eleventy",
