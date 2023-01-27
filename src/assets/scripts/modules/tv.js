@@ -31,7 +31,7 @@ export const channelMap = {
   7: { type: 'video', duration: null, startTimestamp: null },
   8: { type: 'video', duration: null, startTimestamp: null },
   9: { type: 'webcam', displayName: 'AV1' },
-  10: {type: 'video',displayName: 'Travel',duration: null,startTimestamp: null,},
+  10: { type: 'video', displayName: 'Travel', duration: null, startTimestamp: null, },
 };
 
 const channelIds = Object.keys(channelMap);

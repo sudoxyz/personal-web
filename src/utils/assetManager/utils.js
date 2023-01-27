@@ -21,12 +21,12 @@ exports.getAsset = ({ fileName, content }) => {
     process.env.ELEVENTY_ENV === 'production' && hash,
     ext,
   ]
-  .filter(Boolean)
-  .join('.');
+    .filter(Boolean)
+    .join('.');
 
   // Normalize path structure to POSIX
-  const localFileName = `/${path.relative('src/', fileName)}`.replace(/\\/g,'/');
-  const publicUrl = path.join(publicDir, publicFileName).replace(/\\/g,'/');
+  const localFileName = `/${path.relative('src/', fileName)}`.replace(/\\/g, '/');
+  const publicUrl = path.join(publicDir, publicFileName).replace(/\\/g, '/');
 
   return {
     content,
@@ -40,7 +40,7 @@ exports.getAssetPublicUrl = function getAssetPublicUrl({ assetPath, callee }) {
   const localPath = path.isAbsolute(assetPath)
     ? assetPath
     // Normalize path structure to POSIX
-    : path.join('/', path.relative('src', path.dirname(callee)), assetPath).replace(/\\/g,'/');
+    : path.join('/', path.relative('src', path.dirname(callee)), assetPath).replace(/\\/g, '/');
 
   const foundAsset = getAssets().find((asset) => {
     return asset.localFileName === localPath;

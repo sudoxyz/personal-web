@@ -20,9 +20,8 @@ module.exports = (config) => {
 
     if (!assetPublicUrl) return '';
 
-    return `<script ${
-      async ? 'async' : ''
-    } type="${type}" src="${assetPublicUrl}"></script>`;
+    return `<script ${async ? 'async' : ''
+      } type="${type}" src="${assetPublicUrl}"></script>`;
   }
 
   function assetFilter(fileName) {

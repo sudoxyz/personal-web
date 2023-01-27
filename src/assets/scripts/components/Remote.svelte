@@ -9,6 +9,9 @@
     toggleContent,
     toggleSpace,
   } from '../modules/tv.js';
+
+
+
 </script>
 
 <style lang="postcss">
@@ -57,14 +60,29 @@
     height: 730px;
     padding: 50px 12px 110px;
     border-radius: 16px 16px 12px 12px / 8px 8px 24px 24px;
-    background-color: #f1f2f6;
+    background-color: #656668;
     background-image: var(--plastic-texture-img, none),
-      linear-gradient(to bottom, #d8d8d8 0%, #a5a5a5 74%);
+      linear-gradient(to bottom, #d8d8d8 0%, #3e3d3d 74%);
     box-shadow: inset 0 14px 6px 0px #e0e0e0, inset 0 8px 10px 0px #252424,
       inset 0px -11px 10px 0px #444;
     font-family: var(--remote-font);
     font-size: 13px;
     text-shadow: none;
+  }
+
+  #slide {
+    position: relative;
+    left: -600px;
+    -webkit-animation: slide 0.5s forwards;
+    -webkit-animation-delay: 0.2s;
+    animation: slide 0.5s forwards;
+    animation-delay: 0.2s;
+  }
+  @-webkit-keyframes slide {
+    100% { left: 0; }
+  }
+  @keyframes slide {
+    100% { left: 0; }
   }
 
   .inner {
@@ -223,7 +241,7 @@
 
 <div class="perspective">
   <div class="wrapper">
-    <div class="remote">
+    <div class="remote" id="slide">
       <div class="inner">
         <div class="buttons">
           <div class="control onoff">
