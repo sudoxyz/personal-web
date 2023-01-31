@@ -1,6 +1,3 @@
-/**
- * imported by scripts/entry.js so we merge svelte css with this
- */
 
 @import './partials/reset.css';
 @import './partials/fonts.css';
@@ -9,7 +6,6 @@
 @import './partials/content.css';
 @import './pages/index.css';
 @import './pages/playlists.css';
-@import './pages/projects.css';
 @import './partials/tv.css';
 
 :root {

@@ -9,9 +9,6 @@
     toggleContent,
     toggleSpace,
   } from '../modules/tv.js';
-
-
-
 </script>
 
 <style lang="postcss">
@@ -68,21 +65,6 @@
     font-family: var(--remote-font);
     font-size: 13px;
     text-shadow: none;
-  }
-
-  #slide {
-    position: relative;
-    left: -600px;
-    -webkit-animation: slide 0.5s forwards;
-    -webkit-animation-delay: 0.2s;
-    animation: slide 0.5s forwards;
-    animation-delay: 0.2s;
-  }
-  @-webkit-keyframes slide {
-    100% { left: 0; }
-  }
-  @keyframes slide {
-    100% { left: 0; }
   }
 
   .inner {
@@ -227,6 +209,15 @@
     }
   }
 
+  .fade {
+    animation: fade-in 4s; 
+  }
+
+  @keyframes fade-in {
+    0% { opacity: 0;}
+    100% { opacity: 1}
+  }
+
   .brand {
     font-weight: bold;
     grid-area: -1/1/-1 / -1;
@@ -241,55 +232,55 @@
 
 <div class="perspective">
   <div class="wrapper">
-    <div class="remote" id="slide">
+    <div class="remote">
       <div class="inner">
         <div class="buttons">
           <div class="control onoff">
-            <button class="hide-text" on:click={() => toggleSpace(false)}>REMOTE
+            <button class="hide-text fade" on:click={() => toggleSpace(false)}>REMOTE
               OFF</button>
             <span>SPACE OFF</span>
           </div>
 
-          <div class="control vol up">
+          <div class="control vol up fade">
             <button on:click={incrementVolume}>▲</button>
           </div>
 
-          <div class="control vol down">
+          <div class="control vol down fade">
             <button on:click={decrementVolume}>▼</button>
             <span>VOLUME</span>
           </div>
 
-          <div class="control mute">
+          <div class="control mute fade">
             <button class="hide-text" on:click={toggleMute}>MUTE</button>
             <span>MUTE</span>
           </div>
 
-          <div class="control ch up">
+          <div class="control ch up fade">
             <button on:click={incrementChannel}>▲</button>
           </div>
 
-          <div class="control ch down">
+          <div class="control ch down fade">
             <button on:click={decrementChannel}>▼</button>
             <span>CHANNEL</span>
           </div>
 
           <div class="numbers">
             {#each { length: 10 } as _, i}
-              <div class="control number">
+              <div class="control number fade">
                 <button on:click={() => gotoChannel(i + 1)}>{i + 1}</button>
               </div>
             {/each}
-            <div class="control number">
+            <div class="control number fade">
               <button on:click={() => gotoChannel(0)}>0</button>
             </div>
           </div>
         </div>
-        <div class="control showhide">
+        <div class="control showhide fade">
           <button class="showhide" on:click={toggleContent}>SHOW / HIDE</button>
         </div>
-        <div class="brand">
+        <div class="brand fade">
           <br />
-          <span>SUDO SPACE COMMAND</span>
+          <span class=''>SUDO SPACE COMMAND</span>
         </div>
       </div>
     </div>
